@@ -1,149 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gmail Conversation - Payment to Pio Gaw</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f6f8fc;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Conversation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
 
-    .gmail-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      border: 1px solid #dadce0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+        .gmail-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-    .email {
-      border-bottom: 1px solid #e0e0e0;
-      padding: 20px;
-    }
+        .gmail-header {
+            background-color: #f1f3f4;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-    .email:last-child {
-      border-bottom: none;
-    }
+        .gmail-logo {
+            height: 30px;
+        }
 
-    .from {
-      font-weight: bold;
-      color: #1a73e8;
-    }
+        .email-thread {
+            padding: 20px;
+        }
 
-    .to {
-      color: #555;
-      margin-top: 4px;
-    }
+        .email-thread h2 {
+            font-size: 18px;
+            color: #202124;
+            margin-bottom: 20px;
+        }
 
-    .subject {
-      font-size: 16px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
+        .email {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
 
-    .body {
-      margin-top: 10px;
-      white-space: pre-wrap;
-      color: #333;
-    }
+        .email-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #5f6368;
+            cursor: pointer;
+        }
 
-    .timestamp {
-      float: right;
-      color: #888;
-      font-size: 12px;
-    }
+        .email-from {
+            font-weight: 500;
+        }
 
-    .clear {
-      clear: both;
-    }
-  </style>
+        .email-time {
+            color: #80868b;
+        }
+
+        .email-subject {
+            font-size: 16px;
+            font-weight: 500;
+            color: #202124;
+            margin: 10px 0;
+        }
+
+        .email-body {
+            font-size: 14px;
+            color: #202124;
+            line-height: 1.5;
+        }
+
+        .email-body p {
+            margin: 5px 0;
+        }
+
+        .email-body code {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .gmail-container {
+                margin: 10px;
+            }
+
+            .email-header {
+                flex-direction: column;
+            }
+
+            .email-time {
+                margin-top: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="gmail-container">
-  <div class="email">
-    <div class="from">Pio Gaw <span class="timestamp">Apr 12, 2025, 9:18 AM</span></div>
-    <div class="to">to me</div>
-    <div class="subject">Re: Payment Status</div>
-    <div class="body">
-      Can you tell me what happened to this transaction as I have not received this money into my Coinbase Wallet?
+    <div class="gmail-container">
+        <div class="gmail-header">
+            <img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/logo/gmail-lockup-dark-1x.png" alt="Gmail Logo" class="gmail-logo">
+        </div>
+        <div class="email-thread">
+            <h2>Conversation with Pio Gaw</h2>
+            <!-- Email 1: Pio Gaw's First Message -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Pio Gaw <piogaw@example.com></span>
+                    <span class="email-time">Mon, Apr 14, 2025, 2:45 PM</span>
+                </div>
+                <div class="email-subject">Subject: Transaction Inquiry</div>
+                <div class="email-body">
+                    <p>Can you tell me what happened to this transaction as I have not received this money into my Coinbase Wallet?</p>
+                </div>
+            </div>
+            <!-- Email 2: Your Reply -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <your.email@example.com></span>
+                    <span class="email-time">Mon, Apr 14, 2025, 2:50 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Transaction Inquiry</div>
+                <div class="email-body">
+                    <p>Dear Pio Gaw,</p>
+                    <p>We’ve been waiting for your response regarding where to make the payment. To proceed and deposit the funds, please send us your BNB wallet address from your Coinbase Wallet App as soon as possible.</p>
+                    <p>Kindly ensure you are using the Coinbase Wallet App and provide your BNB wallet address from there. Once we receive the correct wallet address, the funds will be deposited into your Coinbase Wallet immediately.</p>
+                    <p>We look forward to your prompt response so we can complete the transaction without further delay.</p>
+                    <p>Best regards,<br>Your Name</p>
+                </div>
+            </div>
+            <!-- Email 3: Pio Gaw's Wallet Address -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Pio Gaw <piogaw@example.com></span>
+                    <span class="email-time">Mon, Apr 14, 2025, 3:00 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Transaction Inquiry</div>
+                <div class="email-body">
+                    <p>Here is my BNB wallet, thank you:</p>
+                    <p><code>0x3f5A9f98720cd97Ca8a944FF623671cd5D0202c6</code></p>
+                </div>
+            </div>
+            <!-- Email 4: Pio Gaw's Confirmation -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Pio Gaw <piogaw@example.com></span>
+                    <span class="email-time">Mon, Apr 14, 2025, 7:52 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Transaction Inquiry</div>
+                <div class="email-body">
+                    <p>Thank you, I have received the payment but it’s missing $19. Can you send the missing amount?</p>
+                    <p>Also, why is it showing as Ethereum instead of BNB?</p>
+                </div>
+            </div>
+            <!-- Email 5: Your Final Reply -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <your.email@example.com></span>
+                    <span class="email-time">Mon, Apr 14, 2025, 8:00 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Transaction Inquiry</div>
+                <div class="email-body">
+                    <p>Dear Pio Gaw,</p>
+                    <p>The value of cryptocurrencies can fluctuate, and it’s possible the amount decreased slightly by the time it reached your wallet. Regarding your question, the currency was sent as Ethereum Meta, which operates under the BNB network.</p>
+                    <p>Please let me know if you need further clarification.</p>
+                    <p>Best regards,<br>Your Name</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="email">
-    <div class="from">Me <span class="timestamp">Apr 12, 2025, 9:34 AM</span></div>
-    <div class="to">to Pio Gaw</div>
-    <div class="subject">Re: Payment Status</div>
-    <div class="body">
-      Dear Pio Gaw,
-
-      We’ve been waiting for your response regarding where to make the payment. To proceed and deposit the funds, please send us your BNB wallet address from your Coinbase Wallet App as soon as possible.
-
-      Kindly ensure you are using the Coinbase Wallet App and provide your BNB wallet address from there. Once we receive the correct wallet address, the funds will be deposited into your Coinbase Wallet immediately.
-
-      We look forward to your prompt response so we can complete the transaction without further delay.
-    </div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="email">
-    <div class="from">Pio Gaw <span class="timestamp">Apr 12, 2025, 9:50 AM</span></div>
-    <div class="to">to me</div>
-    <div class="subject">Re: Payment Status</div>
-    <div class="body">
-      Here is my BNB wallet, thank you:
-
-      0x3f5A9f98720cd97Ca8a944FF623671cd5D0202c6
-    </div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="email">
-    <div class="from">Me <span class="timestamp">Apr 12, 2025, 10:05 AM</span></div>
-    <div class="to">to Pio Gaw</div>
-    <div class="subject">Re: Payment Sent</div>
-    <div class="body">
-      Hello Pio,
-
-      The payment of $3,099 has been successfully sent to your Coinbase Wallet.
-    </div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="email">
-    <div class="from">Pio Gaw <span class="timestamp">Apr 12, 2025, 10:17 AM</span></div>
-    <div class="to">to me</div>
-    <div class="subject">Re: Payment Sent</div>
-    <div class="body">
-      Thank you, I have received the payment but it's missing $19 — can you send the missing amount?
-
-      Also, why is it showing as Ethereum instead of BNB?
-    </div>
-    <div class="clear"></div>
-  </div>
-
-  <div class="email">
-    <div class="from">Me <span class="timestamp">Apr 12, 2025, 10:30 AM</span></div>
-    <div class="to">to Pio Gaw</div>
-    <div class="subject">Re: Payment Clarification</div>
-    <div class="body">
-      Hi Pio,
-
-      The amount may have fluctuated slightly due to network fees or token value changes during processing.
-
-      Also, the currency sent is Ethereum Meta, which operates under the BNB network — this may appear differently depending on how your Coinbase Wallet displays the token.
-
-      Let me know if you need further clarification.
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-
+    <script>
+        // Toggle email body visibility
+        document.addEventListener('DOMContentLoaded', () => {
+            const emails = document.querySelectorAll('.email');
+            emails.forEach(email => {
+                const header = email.querySelector('.email-header');
+                const body = email.querySelector('.email-body');
+                header.addEventListener('click', () => {
+                    body.style.display = body.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
