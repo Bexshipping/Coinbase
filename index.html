@@ -4,81 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Union Bank & Trust - Payment Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background: linear-gradient(to bottom, #f5f5f5, #e0e7ff);
             color: #333;
+            min-height: 100vh;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
         header {
-            background-color: #0055A6;
+            background: linear-gradient(to right, #0055A6, #003366);
             color: white;
-            padding: 15px 0;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            margin: 0;
-            font-size: 24px;
+            margin: 10px 0;
+            font-size: 28px;
+            font-weight: 700;
         }
         .logo {
-            max-width: 150px;
-            margin: 10px auto;
+            max-width: 180px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
         }
         .confirmation-box {
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 5px solid #0055A6;
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .confirmation-box h2 {
             color: #0055A6;
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        .confirmation-box h2::before {
+            content: '✔';
+            color: #28a745;
+            font-size: 28px;
+            margin-right: 10px;
         }
         .details p {
-            margin: 10px 0;
+            margin: 12px 0;
             font-size: 16px;
+            line-height: 1.6;
         }
         .details strong {
             color: #0055A6;
+            font-weight: 500;
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #0055A6;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            border-radius: 6px;
+            margin: 10px 10px 0 0;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .btn:hover {
             background-color: #003366;
+            transform: translateY(-2px);
+        }
+        .status {
+            color: #28a745;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .status::before {
+            content: '✓';
+            background-color: #28a745;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
         }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             font-size: 14px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 15px;
+            }
+            .confirmation-box {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://via.placeholder.com/150x50?text=UBT+Logo" alt="Union Bank & Trust Logo" class="logo">
-        <h1>Union Bank & Trust</h1>
+        <img src="logo.png" alt="Union Bank & Trust Logo" class="logo">
+        <h2>Union Bank & Trust</h2>
     </header>
     <div class="container">
         <div class="confirmation-box">
@@ -96,9 +149,10 @@
                 <p style="margin-left: 20px;"><strong>Bank Name:</strong> SumUp Limited</p>
                 <p><strong>Originating Bank:</strong> Union Bank and Trust, 6801 O St, Lincoln, NE 68510, United States</p>
                 <p><strong>Transaction Date:</strong> May 12, 2025</p>
-                <p><strong>Status:</strong> Completed</p>
+                <p class="status"><strong>Status:</strong> Completed</p>
             </div>
             <a href="mailto:customerservice@unionbanktrust.com" class="btn">Contact Support</a>
+            <a href="confirmation.pdf" download class="btn">Download PDF</a>
         </div>
     </div>
     <footer>
