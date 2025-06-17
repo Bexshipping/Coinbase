@@ -3,162 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Union Bank & Trust - Payment Confirmation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Gmail Conversation with Paul Nero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #f5f5f5, #e0e7ff);
-            color: #333;
-            min-height: 100vh;
         }
-        .container {
+
+        .gmail-container {
             max-width: 900px;
             margin: 20px auto;
-            padding: 0 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
-        header {
-            background: linear-gradient(to right, #0055A6, #003366);
-            color: white;
+
+        .gmail-header {
+            background-color: #f1f3f4;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .gmail-logo {
+            height: 30px;
+        }
+
+        .email-thread {
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        header h1 {
-            margin: 10px 0;
-            font-size: 28px;
-            font-weight: 700;
+
+        .email-thread h2 {
+            font-size: 18px;
+            color: #202124;
+            margin-bottom: 20px;
         }
-        .logo {
-            max-width: 180px;
-            height: auto;
-            margin: 0 auto;
-            display: block;
+
+        .email {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
         }
-        .confirmation-box {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            margin: 30px 0;
-            border-left: 5px solid #0055A6;
-            animation: fadeIn 0.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .confirmation-box h2 {
-            color: #0055A6;
-            font-size: 24px;
-            margin-bottom: 25px;
-            font-weight: 700;
+
+        .email-header {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #5f6368;
+            cursor: pointer;
         }
-        .confirmation-box h2::before {
-            content: '✔';
-            color: #28a745;
-            font-size: 28px;
-            margin-right: 10px;
-        }
-        .details p {
-            margin: 12px 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        .details strong {
-            color: #0055A6;
+
+        .email-from {
             font-weight: 500;
         }
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #0055A6;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 10px 10px 0 0;
-            transition: background-color 0.3s, transform 0.2s;
+
+        .email-time {
+            color: #80868b;
         }
-        .btn:hover {
-            background-color: #003366;
-            transform: translateY(-2px);
+
+        .email-subject {
+            font-size: 16px;
+            font-weight: 500;
+            color: #202124;
+            margin: 10px 0;
         }
-        .status {
-            color: #28a745;
-            font-weight: 700;
-            font-size: 18px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-        }
-        .status::before {
-            content: '✓';
-            background-color: #28a745;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
+
+        .email-body {
             font-size: 14px;
-            margin-top: 20px;
+            color: #202124;
+            line-height: 1.5;
         }
+
+        .email-body p {
+            margin: 5px 0;
+        }
+
+        .email-body code {
+            background-color: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
         @media (max-width: 600px) {
-            .container {
-                padding: 0 15px;
+            .gmail-container {
+                margin: 10px;
             }
-            .confirmation-box {
-                padding: 20px;
+
+            .email-header {
+                flex-direction: column;
             }
-            header h1 {
-                font-size: 22px;
+
+            .email-time {
+                margin-top: 5px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Union Bank & Trust Logo" class="logo">
-        <h1>Union Bank & Trust</h1>
-    </header>
-    <div class="container">
-        <div class="confirmation-box">
-            <h2>Payment Transfer Confirmation</h2>
-            <div class="details">
-                <p><strong>Transaction Type:</strong> Blockchain Wire Transfer</p>
-                <p><strong>Amount:</strong> $100,000.00</p>
-                <p><strong>Blockchain Fee (2%):</strong> $2,000.00</p>
-                <p><strong>Total Deducted:</strong> $102,000.00</p>
-                <p><strong>Recipient:</strong> Francisco Miñana Sanchís</p>
-                <p><strong>Recipient Address:</strong> Calle Ernest Lluch 45 4a, Oliva, Valencia, Spain</p>
-                <p><strong>Recipient Bank Account:</strong></p>
-                <p style="margin-left: 20px;"><strong>IBAN:</strong> ES19 1583 0001 1590 5282 1023</p>
-                <p style="margin-left: 20px;"><strong>BIC/SWIFT:</strong> REVOESM2</p>
-                <p style="margin-left: 20px;"><strong>Bank Name:</strong> Revolut Bank UAB</p>
-                <p style="margin-left: 20px;"><strong>Bank Address:</strong> Calle Príncipe de Vergara 132, 4 floor, 28002, Madrid, Spain</p>
-                <p style="margin-left: 20px;"><strong>Correspondent BIC:</strong> CHASGB2L</p>
-                <p><strong>Originating Bank:</strong> Union Bank and Trust, 6801 O St, Lincoln, NE 68510, United States</p>
-                <p><strong>Transaction Date:</strong> May 27, 2025</p>
-                <p class="status"><strong>Status:</strong> Completed</p>
+    <div class="gmail-container">
+        <div class="gmail-header">
+            <img src="https://ssl.gstatic.com/ui/v1/icons/mail/images/logo/gmail-lockup-dark-1x.png" alt="Gmail Logo" class="gmail-logo">
+        </div>
+        <div class="email-thread">
+            <h2>Conversation with Paul Nero</h2>
+            <!-- Email 1: Paul Nero's Initial Inquiry -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Paul Nero <neroguess@hotmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 3:22 PM</span>
+                </div>
+                <div class="email-subject">Subject: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Hello,</p>
+                    <p>I saw your advert on YouTube about selling Ethereum. Can you confirm if you’re the seller? Are you legitimate and will you send the Ethereum after I pay?</p>
+                </div>
             </div>
-            <a href="mailto:customerservice@unionbanktrust.com" class="btn">Contact Support</a>
-            <a href="receipt.pdf" download class="btn">Download Receipt</a>
+            <!-- Email 2: Your Reply -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <cynthiafelicia012@gmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 3:29 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Dear Mr. Nero,</p>
+                    <p>Yes, I am the seller featured in the YouTube advert. I am a professional cryptocurrency trader specializing in buying and selling cryptocurrencies, including Ethereum Meta. I assure you that my services are legitimate, and I will promptly deliver the agreed cryptocurrency to your wallet upon confirmation of payment.</p>
+                    <p>I accept payments via bank transfer or PayPal for your convenience. Please let me know your preferred payment method and the amount of Ethereum Meta you wish to purchase, and I will provide further details to proceed.</p>
+                </div>
+            </div>
+            <!-- Email 3: Paul Nero's Purchase Request -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Paul Nero <neroguess@hotmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 3:36 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Thank you for confirming. I’d like to buy Ethereum Meta worth £1,600. I’ll make the payment when I get home from work tonight.</p>
+                </div>
+            </div>
+            <!-- Email 4: Your Payment Instructions -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <cynthiafelicia012@gmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 3:47 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Dear Mr. Nero,</p>
+                    <p>Thank you for your interest in purchasing Ethereum Meta worth £1,600. I accept payments via bank transfer or PayPal. Please let me know which method you prefer, and I will provide the necessary payment details.</p>
+                    <p>Once the payment is confirmed, I will transfer the Ethereum Meta to your designated wallet address promptly.</p>
+                </div>
+            </div>
+            <!-- Email 5: Paul Nero Chooses PayPal -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Paul Nero <neroguess@hotmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 7:03 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>I’d like to proceed with a PayPal transfer. Please send me your PayPal details.</p>
+                </div>
+            </div>
+            <!-- Email 6: Your PayPal Details -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <cynthiafelicia012@gmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 7:11 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Dear Mr. Nero,</p>
+                    <p>Thank you for choosing PayPal, which provides protection for both of us in this transaction. Please send the payment of £1,600 to my PayPal account:</p>
+                    <p><strong>Username:</strong> Coinwal<br>
+                    <strong>Email:</strong> cynthiafelicia012@gmail.com</p>
+                    <p>Once I confirm receipt of the payment, I will request your Coinbase Wallet address to transfer the Ethereum Meta. Please ensure the payment is sent as a business transaction to avoid delays. Additionally, I kindly request that you do not raise a chargeback after I send the Ethereum, as cryptocurrency transactions are irreversible.</p>
+                </div>
+            </div>
+            <!-- Email 7: Your Payment Confirmation -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <cynthiafelicia012@gmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 7:38 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Dear Mr. Nero,</p>
+                    <p>I have received your PayPal payment of £1,600 at 7:35 PM. Thank you for your prompt transaction.</p>
+                    <p>To complete the transfer, please provide your Coinbase Wallet address where you would like the Ethereum Meta to be sent. Kindly ensure the address is correct to avoid any issues.</p>
+                </div>
+            </div>
+            <!-- Email 8: Paul Nero's Wallet Address -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: Paul Nero <neroguess@hotmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 7:59 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Here is my Coinbase Wallet address for the Ethereum Meta:</p>
+                    <p><code>0xcC85838Af4371a349e4ac49D13B7a3980Ddd410a</code></p>
+                </div>
+            </div>
+            <!-- Email 9: Your Dispute Inquiry -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <cynthiafelicia012@gmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 8:30 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Dear Mr. Nero,</p>
+                    <p>I noticed you raised a dispute on the PayPal transaction at 8:06 PM. Could you please clarify why this was initiated? I sent the Ethereum Meta worth $2,148 USD to your Coinbase Wallet address (0xcC85838Af4371a349e4ac49D13B7a3980Ddd410a) at 8:23 PM.</p>
+                    <p>Please confirm if you have received the Ethereum in your wallet.</p>
+                </div>
+            </div>
+            <!-- Email 10: Your Follow-Up -->
+            <div class="email">
+                <div class="email-header">
+                    <span class="email-from">From: You <cynthiafelicia012@gmail.com></span>
+                    <span class="email-time">Thu, Apr 10, 2025, 8:37 PM</span>
+                </div>
+                <div class="email-subject">Subject: Re: Inquiry About Your YouTube Advert</div>
+                <div class="email-body">
+                    <p>Dear Mr. Nero,</p>
+                    <p>I’ve sent the Ethereum Meta to your Coinbase Wallet at 8:23 PM. Have you seen it in your wallet? Please let me know if there are any issues or if you need further assistance.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <footer>
-        <p>© 2025 Union Bank and Trust. All rights reserved. | 6801 O St, Lincoln, NE 68510 | (800) 555-1234</p>
-    </footer>
+    <script>
+        // Toggle email body visibility
+        document.addEventListener('DOMContentLoaded', () => {
+            const emails = document.querySelectorAll('.email');
+            emails.forEach(email => {
+                const header = email.querySelector('.email-header');
+                const body = email.querySelector('.email-body');
+                header.addEventListener('click', () => {
+                    body.style.display = body.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
